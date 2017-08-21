@@ -17,8 +17,7 @@ import kotlinx.android.synthetic.main.fragment.*
 class MyFragment : Fragment() {
 
     private val TAG = "MyFragment"
-    private lateinit var internetUtil: InternetUtil
-    private lateinit var myDataSource: MyDataSource
+    private val myDataSource = MyDataSource()
     private lateinit var myViewModel: MyViewModel
 
     private val viewSubscriptions = CompositeDisposable()
@@ -26,9 +25,6 @@ class MyFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         retainInstance = true
-
-        internetUtil = InternetUtil(activity.application)
-        myDataSource = MyDataSource(internetUtil)
         myViewModel = MyViewModel(myDataSource)
     }
 
@@ -55,7 +51,7 @@ class MyFragment : Fragment() {
     }
 
     override fun onStop() {
-        internetUtil.stopWaitForInternet()
+        InternetUtil.stopWaitForInternet()
         viewSubscriptions.clear()
         super.onStop()
     }
@@ -66,12 +62,12 @@ class MyFragment : Fragment() {
     }
 
     fun waitForInternet() {
-        viewSubscriptions.add(internetUtil.waitForInternet()
+        viewSubscriptions.add(InternetUtil.waitForInternet()
                 .observeOn(Schedulers.computation())
                 .subscribe({
                     status ->
                     if (status ?: false) {
-                        internetUtil.stopWaitForInternet()
+                        InternetUtil.stopWaitForInternet()
                         myViewModel.getData()
                     }
                 }))
