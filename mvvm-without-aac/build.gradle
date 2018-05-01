@@ -35,7 +35,7 @@ dependencies {
     /* Kotlin */
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:1.1.4"
 
-    /* Leak Canary */
+    /* Leak Canary : akCanary 는 Open Source Java library 로 메모리 릭을 검출 */
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.1'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
 }
