@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MVVM Refactoring using AAC.iml" filepath="$PROJECT_DIR$/MVVM Refactoring using AAC.iml" />
       <module fileurl="file://$PROJECT_DIR$/Refactoring-MVVM-using-AAC.iml" filepath="$PROJECT_DIR$/Refactoring-MVVM-using-AAC.iml" />
       <module fileurl="file://$PROJECT_DIR$/mvvm-with-aac/mvvm-with-aac.iml" filepath="$PROJECT_DIR$/mvvm-with-aac/mvvm-with-aac.iml" />
       <module fileurl="file://$PROJECT_DIR$/mvvm-without-aac/mvvm-without-aac.iml" filepath="$PROJECT_DIR$/mvvm-without-aac/mvvm-without-aac.iml" />
